@@ -1,23 +1,23 @@
 let command = process.argv.slice(2,4)
 
-let generateBoard = (rows_cols) => {
+function snakeandwhatever (kotak) {
 
     if(command==""){
         return "Please input command ex node index.js 9"
     }
-    
-    let length = Math.pow(rows_cols, 2);
+
+    let length = Math.pow(kotak, 2);
     let board = [];
-    for (let i = 0; i < rows_cols; i++) {
+    for (let i = 0; i < kotak; i++) {
         let temp = [];
-        for (let j = 0; j < rows_cols; j++) {
+        for (let j = 0; j < kotak; j++) {
                 temp.push(length);
                 length--;
         }
         board.push(temp);
     }
 
-    if(rows_cols % 2 === 0){
+    if(kotak % 2 === 0){
         for (let i = 0; i < board.length; i++) {
             if(i % 2 === 1){
                 board[i].sort((a, b) => a - b);
@@ -33,4 +33,4 @@ let generateBoard = (rows_cols) => {
     return board;
 }
 
-console.log(generateBoard(command));
+console.log(snakeandwhatever(command));
